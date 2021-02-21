@@ -1,6 +1,22 @@
-type Gravatar @entity {
+type _Schema_
+  @fulltext(
+    name: "cryptoGoatSearch",
+    language: en
+    algorithm: rank,
+    include: [
+      {
+        entity: "CryptoGoat",
+        fields: [
+          { name: "goatName" }
+        ]
+      }
+    ]
+  )
+
+type CryptoGoat @entity {
   id: ID!
-  owner: Bytes!
-  displayName: String!
-  imageUrl: String!
+  owner: Bytes
+  goatName: String
+  goatMetadata: String
+  goatRandomness: Int
 }

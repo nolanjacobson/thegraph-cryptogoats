@@ -12,7 +12,7 @@ import {
   BigDecimal
 } from "@graphprotocol/graph-ts";
 
-export class Gravatar extends Entity {
+export class CryptoGoat extends Entity {
   constructor(id: string) {
     super();
     this.set("id", Value.fromString(id));
@@ -20,17 +20,17 @@ export class Gravatar extends Entity {
 
   save(): void {
     let id = this.get("id");
-    assert(id !== null, "Cannot save Gravatar entity without an ID");
+    assert(id !== null, "Cannot save CryptoGoat entity without an ID");
     assert(
       id.kind == ValueKind.STRING,
-      "Cannot save Gravatar entity with non-string ID. " +
+      "Cannot save CryptoGoat entity with non-string ID. " +
         'Considering using .toHex() to convert the "id" to a string.'
     );
-    store.set("Gravatar", id.toString(), this);
+    store.set("CryptoGoat", id.toString(), this);
   }
 
-  static load(id: string): Gravatar | null {
-    return store.get("Gravatar", id) as Gravatar | null;
+  static load(id: string): CryptoGoat | null {
+    return store.get("CryptoGoat", id) as CryptoGoat | null;
   }
 
   get id(): string {
@@ -42,30 +42,63 @@ export class Gravatar extends Entity {
     this.set("id", Value.fromString(value));
   }
 
-  get owner(): Bytes {
+  get owner(): Bytes | null {
     let value = this.get("owner");
-    return value.toBytes();
+    if (value === null || value.kind == ValueKind.NULL) {
+      return null;
+    } else {
+      return value.toBytes();
+    }
   }
 
-  set owner(value: Bytes) {
-    this.set("owner", Value.fromBytes(value));
+  set owner(value: Bytes | null) {
+    if (value === null) {
+      this.unset("owner");
+    } else {
+      this.set("owner", Value.fromBytes(value as Bytes));
+    }
   }
 
-  get displayName(): string {
-    let value = this.get("displayName");
-    return value.toString();
+  get goatName(): string | null {
+    let value = this.get("goatName");
+    if (value === null || value.kind == ValueKind.NULL) {
+      return null;
+    } else {
+      return value.toString();
+    }
   }
 
-  set displayName(value: string) {
-    this.set("displayName", Value.fromString(value));
+  set goatName(value: string | null) {
+    if (value === null) {
+      this.unset("goatName");
+    } else {
+      this.set("goatName", Value.fromString(value as string));
+    }
   }
 
-  get imageUrl(): string {
-    let value = this.get("imageUrl");
-    return value.toString();
+  get goatMetadata(): string | null {
+    let value = this.get("goatMetadata");
+    if (value === null || value.kind == ValueKind.NULL) {
+      return null;
+    } else {
+      return value.toString();
+    }
   }
 
-  set imageUrl(value: string) {
-    this.set("imageUrl", Value.fromString(value));
+  set goatMetadata(value: string | null) {
+    if (value === null) {
+      this.unset("goatMetadata");
+    } else {
+      this.set("goatMetadata", Value.fromString(value as string));
+    }
+  }
+
+  get goatRandomness(): i32 {
+    let value = this.get("goatRandomness");
+    return value.toI32();
+  }
+
+  set goatRandomness(value: i32) {
+    this.set("goatRandomness", Value.fromI32(value));
   }
 }

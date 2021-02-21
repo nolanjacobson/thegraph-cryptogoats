@@ -18,10 +18,17 @@ module.exports = {
       },
       network_id: '3',
     },
+    rinkeby: {
+      provider: () => {
+        return new HDWalletProvider(process.env.MNEMONIC_2, process.env.RINKEBY_RPC_URL)
+      },
+      network_id: '4',
+      skipDryRun: true,
+    },
   },
   compilers: {
     solc: {
-      version: '0.4.25'    // Fetch exact version from solc-bin (default: truffle's version)
+      version: '0.6.6'    // Fetch exact version from solc-bin (default: truffle's version)
     }
   }
 }

@@ -1,22 +1,27 @@
-import { NewGravatar, UpdatedGravatar } from '../generated/Gravity/Gravity'
-import { Gravatar } from '../generated/schema'
+import { BigInt, } from "@graphprotocol/graph-ts"
+import {
+  CryptoGoats,
+  Approval,
+  ApprovalForAll,
+  NewGoat,
+  OwnershipTransferred,
+  Transfer,
+  UpdatedGoatMetadata
+} from "../generated/CryptoGoats/CryptoGoats"
+import { CryptoGoat } from "../generated/schema"
 
-export function handleNewGravatar(event: NewGravatar): void {
-  let gravatar = new Gravatar(event.params.id.toHex())
-  gravatar.owner = event.params.owner
-  gravatar.displayName = event.params.displayName
-  gravatar.imageUrl = event.params.imageUrl
-  gravatar.save()
+export function handleNewGoat(event: NewGoat): void {
+  let cryptoGoat = new CryptoGoat(event.params.goatId.toHex())
+  cryptoGoat.owner = event.transaction.from;
+  cryptoGoat.goatName = event.params.name
+  cryptoGoat.goatRandomness = 100
+  cryptoGoat.goatMetadata = null
+  cryptoGoat.save()
 }
 
-export function handleUpdatedGravatar(event: UpdatedGravatar): void {
-  let id = event.params.id.toHex()
-  let gravatar = Gravatar.load(id)
-  if (gravatar == null) {
-    gravatar = new Gravatar(id)
-  }
-  gravatar.owner = event.params.owner
-  gravatar.displayName = event.params.displayName
-  gravatar.imageUrl = event.params.imageUrl
-  gravatar.save()
+export function handleUpdatedGoatMetadata(event: UpdatedGoatMetadata): void {
+  let id = event.params.goatId.toHex();
+  let cryptoGoat = CryptoGoat.load(id);
+  cryptoGoat.goatMetadata = event.params.goatMetadata;
+  cryptoGoat.save()
 }

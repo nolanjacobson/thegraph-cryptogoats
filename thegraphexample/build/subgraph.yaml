@@ -1,27 +1,26 @@
 specVersion: 0.0.2
-description: Gravatar for Ethereum
-repository: https://github.com/graphprotocol/example-subgraph
 schema:
   file: schema.graphql
 dataSources:
   - kind: ethereum/contract
-    name: Gravity
-    network: mainnet
+    name: CryptoGoats
+    network: rinkeby
     source:
-      address: "0x98ABf412466a906a4b956e0eC2d841e87Fc571A6"
-      abi: Gravity
+      address: "0x7d128cff842323df304062F7D6562eB5Fc1B2524"
+      abi: CryptoGoats
+      startBlock: 8114632
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.4
       language: wasm/assemblyscript
       entities:
-        - Gravatar
+        - NewGoat
       abis:
-        - name: Gravity
-          file: Gravity/abis/Gravity.json
+        - name: CryptoGoats
+          file: CryptoGoats/abis/CryptoGoats.json
       eventHandlers:
-        - event: NewGravatar(uint256,address,string,string)
-          handler: handleNewGravatar
-        - event: UpdatedGravatar(uint256,address,string,string)
-          handler: handleUpdatedGravatar
-      file: Gravity/Gravity.wasm
+        - event: NewGoat(uint256,string,uint256)
+          handler: handleNewGoat
+        - event: UpdatedGoatMetadata(uint256,string)
+          handler: handleUpdatedGoatMetadata
+      file: CryptoGoats/CryptoGoats.wasm

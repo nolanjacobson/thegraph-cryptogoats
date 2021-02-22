@@ -19,10 +19,7 @@ if (!process.env.NEXT_PUBLIC_GRAPHQL_ENDPOINT) {
 }
 
 const client = new ApolloClient({
-  uri: process.env.NEXT_PUBLIC_GRAPHQL_ENDPOINT,
-  fetchOptions: {
-    mode: 'no-cors'
-  }
+  uri: process.env.NEXT_PUBLIC_GRAPHQL_ENDPOINT
 });
 
 const CRYPTOGOATS_QUERY = gql`

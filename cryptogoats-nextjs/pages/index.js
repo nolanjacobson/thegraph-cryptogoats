@@ -63,7 +63,6 @@ export default class Home extends Component {
   };
 
   render() {
-
     return (
       <ApolloProvider client={client}>
         <div className="App">

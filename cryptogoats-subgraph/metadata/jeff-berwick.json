@@ -1,0 +1,14 @@
+{
+  "name": "Jeff Berwick",
+  "description": "",
+  "image": "https://ipfs.io/ipfs/QmYnUdCDyXZyDczYHUrwJGBQbYcerRznjtRjiydpCMYp7H?filename=BerwickTaxes.png",
+  "attributes": [
+    { "trait_type": "Strength", "value": 14 },
+    { "trait_type": "Dexterity", "value": 57 },
+    { "trait_type": "Constitution", "value": 74 },
+    { "trait_type": "Intelligence", "value": 57 },
+    { "trait_type": "Wisdom", "value": 22 },
+    { "trait_type": "Charisma", "value": 67 },
+    { "trait_type": "Experience", "value": 0 }
+  ]
+}

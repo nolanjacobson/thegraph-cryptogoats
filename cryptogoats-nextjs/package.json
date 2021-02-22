@@ -1,0 +1,23 @@
+{
+  "name": "cryptogoats-nextjs",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@material-ui/core": "^3.9.2",
+    "@material-ui/icons": "^3.0.2",
+    "apollo-boost": "^0.1.28",
+    "apollo-client": "^2.6.10",
+    "axios": "^0.21.1",
+    "graphql": "^14.1.1",
+    "graphql-tag": "^2.11.0",
+    "next": "10.0.7",
+    "react": "17.0.1",
+    "react-apollo": "^2.4.1",
+    "react-dom": "17.0.1"
+  }
+}

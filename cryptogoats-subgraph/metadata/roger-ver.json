@@ -1,0 +1,14 @@
+{
+  "name": "Roger Ver",
+  "description": "",
+  "image": "https://ipfs.io/ipfs/QmWH5inrn84LxiowPoSFb1nrwrh4UFR3evrhNWzC7Ki1BR?filename=RV.png",
+  "attributes": [
+    { "trait_type": "Strength", "value": 84 },
+    { "trait_type": "Dexterity", "value": 82 },
+    { "trait_type": "Constitution", "value": 31 },
+    { "trait_type": "Intelligence", "value": 86 },
+    { "trait_type": "Wisdom", "value": 3 },
+    { "trait_type": "Charisma", "value": 46 },
+    { "trait_type": "Experience", "value": 0 }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "name": "Charlie Shrem",
+  "description": "",
+  "image": "https://ipfs.io/ipfs/QmecBMkSLMKSR9T3TdApdzUdcAC5poX1yqDqMrj6329koC?filename=charlie-shrem.json",
+  "attributes": [
+    { "trait_type": "Strength", "value": 42 },
+    { "trait_type": "Dexterity", "value": 13 },
+    { "trait_type": "Constitution", "value": 24 },
+    { "trait_type": "Intelligence", "value": 17 },
+    { "trait_type": "Wisdom", "value": 39 },
+    { "trait_type": "Charisma", "value": 89 },
+    { "trait_type": "Experience", "value": 0 }
+  ]
+}

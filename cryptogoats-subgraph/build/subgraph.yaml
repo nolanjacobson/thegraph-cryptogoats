@@ -1,0 +1,28 @@
+specVersion: 0.0.2
+schema:
+  file: schema.graphql
+dataSources:
+  - kind: ethereum/contract
+    name: CryptoGoats
+    network: rinkeby
+    source:
+      address: "0x7d128cff842323df304062F7D6562eB5Fc1B2524"
+      abi: CryptoGoats
+      startBlock: 8114632
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - NewGoat
+      abis:
+        - name: CryptoGoats
+          file: CryptoGoats/abis/CryptoGoats.json
+      eventHandlers:
+        - event: NewGoat(uint256,string,uint256)
+          handler: handleNewGoat
+        - event: UpdatedGoatMetadata(uint256,string)
+          handler: handleUpdatedGoatMetadata
+        - event: Transfer(indexed address,indexed address,indexed uint256)
+          handler: handleTransfer
+      file: CryptoGoats/CryptoGoats.wasm

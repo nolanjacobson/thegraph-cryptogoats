@@ -1,0 +1,14 @@
+{
+  "name": "Vitalik Buterin",
+  "description": "",
+  "image": "https://ipfs.io/ipfs/Qma7L55sRXNeYsyX2bH7u7K7WtT57a6wNrk46dSeJpdALY?filename=VB.png",
+  "attributes": [
+    { "trait_type": "Strength", "value": 26 },
+    { "trait_type": "Dexterity", "value": 8 },
+    { "trait_type": "Constitution", "value": 24 },
+    { "trait_type": "Intelligence", "value": 28 },
+    { "trait_type": "Wisdom", "value": 52 },
+    { "trait_type": "Charisma", "value": 43 },
+    { "trait_type": "Experience", "value": 0 }
+  ]
+}

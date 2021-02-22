@@ -1,0 +1,14 @@
+{
+  "name": "Dan Larimer",
+  "description": "",
+  "image": "https://ipfs.io/ipfs/QmT6VWUQFes6Z8Xs35JdzerxyvUprxbrfnFFvNkqDqoKmB?filename=DL.png",
+  "attributes": [
+    { "trait_type": "Strength", "value": 25 },
+    { "trait_type": "Dexterity", "value": 51 },
+    { "trait_type": "Constitution", "value": 84 },
+    { "trait_type": "Intelligence", "value": 43 },
+    { "trait_type": "Wisdom", "value": 98 },
+    { "trait_type": "Charisma", "value": 78 },
+    { "trait_type": "Experience", "value": 0 }
+  ]
+}

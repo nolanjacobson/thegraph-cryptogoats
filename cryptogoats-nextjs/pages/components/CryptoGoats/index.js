@@ -1,1 +1,1 @@
-export { default } from './Gravatars'
+export { default } from './CryptoGoats'

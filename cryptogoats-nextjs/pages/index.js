@@ -21,7 +21,7 @@ if (!process.env.NEXT_PUBLIC_GRAPHQL_ENDPOINT) {
 }
 
 const client = new ApolloClient({
-  uri: "https://api.thegraph.com/subgraphs/name/nolanjacobson/cryptogoats",
+  uri: process.env.NEXT_PUBLIC_GRAPHQL_ENDPOINT,
 });
 
 const CRYPTOGOATS_QUERY = gql`
@@ -74,7 +74,6 @@ export default class Home extends Component {
                 ) : (
                   <>
                     <CryptoGoats cryptoGoats={data.cryptoGoats} />
-                    {console.log(data.cryptoGoats)}
                   </>
                 );
               }}

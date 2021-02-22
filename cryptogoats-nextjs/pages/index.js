@@ -11,10 +11,10 @@ import {
   DialogTitle,
   Button,
 } from "@material-ui/core";
-import Header from "../components/Header/Header";
-import Error from "../components/Error/Error";
-import CryptoGoats from "../components/CryptoGoats/CryptoGoats";
-import Filter from "../components/Filter/Filter";
+import Header from "./components/Header/Header";
+import Error from "./components/Error/Error";
+import CryptoGoats from "./components/CryptoGoats/CryptoGoats";
+import Filter from "./components/Filter/Filter";
 
 if (!process.env.NEXT_PUBLIC_GRAPHQL_ENDPOINT) {
   throw new Error('NEXT_PUBLIC_GRAPHQL_ENDPOINT environment variable not defined')
@@ -22,6 +22,9 @@ if (!process.env.NEXT_PUBLIC_GRAPHQL_ENDPOINT) {
 
 const client = new ApolloClient({
   uri: process.env.NEXT_PUBLIC_GRAPHQL_ENDPOINT,
+  fetchOptions: {
+    mode: 'no-cors'
+  }
 });
 
 const CRYPTOGOATS_QUERY = gql`

@@ -1,5 +1,7 @@
 import React, { Component } from "react";
-import ApolloClient, { gql, InMemoryCache } from "apollo-boost";
+import { gql } from "apollo-boost";
+import { ApolloClient } from "apollo-client";
+import { InMemoryCache } from "apollo-cache-inmemory";
 import { ApolloProvider, Query } from "react-apollo";
 import {
   Grid,
@@ -13,13 +15,17 @@ import {
 } from "@material-ui/core";
 import Error from "../components/Error/Error";
 import CryptoGoats from "../components/CryptoGoats/CryptoGoats";
+import { HttpLink } from "apollo-link-http";
 
 if (!process.env.NEXT_PUBLIC_GRAPHQL_ENDPOINT) {
-  throw new Error('NEXT_PUBLIC_GRAPHQL_ENDPOINT environment variable not defined')
+  throw new Error(
+    "NEXT_PUBLIC_GRAPHQL_ENDPOINT environment variable not defined"
+  );
 }
 
 const client = new ApolloClient({
-  uri: process.env.NEXT_PUBLIC_GRAPHQL_ENDPOINT
+  link: new HttpLink({ uri: process.env.NEXT_PUBLIC_GRAPHQL_ENDPOINT }),
+  cache: new InMemoryCache(),
 });
 
 const CRYPTOGOATS_QUERY = gql`
@@ -57,7 +63,6 @@ export default class Home extends Component {
   };
 
   render() {
-    const { withImage, withName, orderBy, showHelpDialog } = this.state;
 
     return (
       <ApolloProvider client={client}>
